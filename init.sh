@@ -4,9 +4,9 @@
 # - create symlinks from the home directory to any desired dotfiles in ~/dotfiles.
 # - install all the vim plugins declared in ~/dotfiles/vimrc.
 
-###############
-## Variables ##
-###############
+#==============
+# Set Variables 
+#==============
 # dotfiles directory
 dir=~/dotfiles
  # old dotfiles backup directory
@@ -15,9 +15,9 @@ olddir=~/dotfiles_old
 files="bashrc vimrc tmux.conf"
 
 
-###############
-## Functions ##
-###############
+#===========
+# Start init
+#===========
 # create dotfiles_old in homedir
 echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
 mkdir -p $olddir

@@ -1,6 +1,6 @@
-"""""""""""""""""""""""""""
-" Vim Plugins with Vundle "
-"""""""""""""""""""""""""""
+"========================
+" Vim Plugins with Vundle
+"========================
 " Please note Vundle requires Python2.6+ "
 let validpython=$PYTHON_OK
 
@@ -34,9 +34,9 @@ if validpython == '1'
     call UseVundle()
 endif
 
-""""""""""""""""""
-" GLOBAL OPTIONS "
-""""""""""""""""""
+"===============
+" GLOBAL OPTIONS
+"===============
 
 " Auto-reload vimrc "
 augroup reload_vimrc " {
@@ -50,3 +50,6 @@ augroup END " }
 
 " limit the number of characters of commit msg to 76
 au FileType gitcommit set tw=76
+
+" Enable bash-support plugin
+filetype plugin on

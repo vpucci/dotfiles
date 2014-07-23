@@ -2,9 +2,9 @@
 # specific configurations for host chelles.eu.adacore.com
 
 
-###################
-## LOCAL INSTALL ##
-###################
+#==============
+# LOCAL INSTALL
+#==============
 
 # HOME
 PUCCI_HOME=/chelles.b/users/pucci
@@ -40,9 +40,9 @@ SANDBOX_ROOT=$PUCCI_HOME/gcc-47
 [ -d "$SANDBOX_ROOT=" ] && PATH=$SANDBOX_ROOT=/bin:$PATH
 
 
-###############
-## GMC TOOLS ##
-###############
+#==========
+# GMC TOOLS
+#==========
 
 PTOOLSET_DIR=$PUCCI_HOME/ptoolset
 GMS_DIR=$PTOOLSET_DIR/gms
@@ -69,9 +69,9 @@ MDL2JSON_HOME=$GMS_DIR/gui
 export PATH
 
 
-##########################
-## GCC-47 SANDBOX TOOLS ##
-##########################
+#=====================
+# GCC-47 SANDBOX TOOLS
+#=====================
 
 # CODEPEER
 
@@ -99,9 +99,9 @@ GPR_PROJECT_PATH='/chelles.b/users/pucci/gcc-47/x86_64-linux/stable-gnat/install
 LIBRARY_PATH="$LIBRARY_PATH:/usr/lib/x86_64-linux-gnu"
 export CPATH PATH LD_LIBRARY_PATH GPR_PROJECT_PATH LIBRARY_PATH
 
-#########
-## EOF ##
-#########
+#====
+# EOF
+#====
 
 export CLICOLOR=true
 export SVN_EDITOR=vi

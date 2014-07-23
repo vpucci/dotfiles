@@ -58,9 +58,9 @@ PATH=~/bin:${PATH}
 [ -d "$HOME" ] && PATH=$HOME/.local/bin:$PATH
 
 
-##################
-## SHELL PROMPT ##
-##################
+#=============
+# SHELL PROMPT
+#=============
 # Powerline requires Python 2.6+
 # Make sure python is 2.6 or later
 PYTHON_OK=`python -c 'import sys; print (sys.version_info >= (2, 6) and "1" or "0")'`
@@ -78,9 +78,9 @@ fi
 export PYTHON_OK
 
 
-##################
-## LOCAL BASHRC ##
-##################
+#=============
+# LOCAL BASHRC
+#=============
 # Now, run the host-specific bashrc if any
 # the host-specific bashrc file
 LOCALBASHRC=$HOME'/dotfiles/bash/bashrc_'`hostname | cut -d. -f1`
