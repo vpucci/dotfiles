@@ -1,0 +1,61 @@
+# bashrc_pucci-laptop
+# specific configurations for host pucci-laptop (AdaCore PC)
+
+
+###################
+## LOCAL INSTALL ##
+###################
+
+# ADACORE DIR
+ADACORE_HOME=/home/pucci/adacore
+PTOOLSET_HOME=$ADACORE_HOME/ptoolset
+GMS_HOME=$PTOOLSET_HOME/gms
+ADACORE_INSTALL=$ADACORE_HOME/install
+GCC_47_DIR=$ADACORE_HOME/gcc-47
+PRODUCT_DIR=$GCC_47_DIR/x86_64-linux
+
+# GNAT PRO, GPS & CODEPEER
+GNAT_HOME=$ADACORE_INSTALL/gnat
+[ -d "$GNAT_HOME" ] && PATH=$GNAT_HOME/bin:$PATH
+#GNAT_HOME=$PRODUCT_DIR/gnat
+#[ -d "$GNAT_HOME" ] && PATH=$GNAT_HOME/install/bin:$PATH
+GPS_HOME=$PRODUCT_DIR/gps
+[ -d "$GPS_HOME" ] && PATH=$GPS_HOME/install/bin:$PATH
+
+# GNATPYTHON
+#GNATPYTHON_DIR=$ADACORE_INSTALL/gnatpython
+#[ -d "$GNATPYTHON_DIR" ] && PATH=$GNATPYTHON_DIR/bin:$PATH
+
+# ANOD
+[ -d "$GCC_47_DIR" ] && PATH=$GCC_47_DIR/bin:$PATH
+
+# QM
+QM_HOME=$ADACORE_INSTALL/qmachine
+[ -d "$QM_HOME" ] && PATH=$QM_HOME/bin:$PATH
+
+# VIM
+VIMRUNTIME=$HOME/.vim
+
+# Project P appropriate headers and libraries
+export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu:${C_INCLUDE_PATH}
+export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:${LIBRARY_PATH}
+export PROCESSORS=8
+
+# GMC
+[ -d "$GMS_HOME" ] && PATH=$GMS_HOME/qualified/obj:$PATH
+
+# MDL2JSON
+MDL2JSON_HOME=$GMS_HOME/gui
+[ -d "$MDL2JSON_HOME" ] && PATH=$MDL2JSON_HOME/obj:$PATH
+
+# SVN Editor
+export SVN_EDITOR=vim
+
+# Git Editor
+export GIT_EDITOR=vim
+
+# Bugtool Remote
+alias bugtool=$ADACORE_INSTALL/bugtool-remote/btr
+
+# GetBin Remote
+alias getbin=$ADACORE_INSTALL/getbin-remote/gbr

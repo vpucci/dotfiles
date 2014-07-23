@@ -57,8 +57,6 @@ PATH=~/bin:${PATH}
 [ -d ~/local/bin ] && PATH=~/local/bin:$PATH
 [ -d "$HOME" ] && PATH=$HOME/.local/bin:$PATH
 
-# HOME
-PUCCI_HOME=/chelles.b/users/pucci
 
 ##################
 ## SHELL PROMPT ##
@@ -79,111 +77,14 @@ else
 fi
 export PYTHON_OK
 
-###################
-## LOCAL INSTALL ##
-###################
 
-LOCAL_DIR=$PUCCI_HOME/local
+##################
+## LOCAL BASHRC ##
+##################
+# Now, run the host-specific bashrc if any
+# the host-specific bashrc file
+LOCALBASHRC="~/dotfiles/bash/bashrc_`hostname | cut -d. -f1`"
 
-# JAVA , JDK, JRE
-JAVA_HOME=$LOCAL_DIR/java
-
-JDK_HOME=$JAVA_HOME/jdk
-#[ -d "$JDK_HOME" ] && PATH=$JDK_HOME/bin:$PATH
-
-JRE_HOME=$JAVA_HOME/jre
-[ -d "$JRE_HOME" ] && PATH=$JRE_HOME/bin:$PATH
-
-# APACHE-ANT
-ANT_HOME=$LOCAL_DIR/apache-ant
-[ -d "$ANT_HOME" ] && PATH=$ANT_HOME/bin:$PATH
-
-# MATLAB
-MATLAB_HOME=/usr/local/MATLAB/R2012b
-[ -d "$MATLAB_HOME" ] && PATH=$MATLAB_HOME/bin:$PATH
-
-# ECLIPSE JUNO
-# JUNO_HOME=$LOCAL_DIR/eclipse/juno
-# [ -d "$JUNO_HOME" ] && PATH=$JUNO_HOME:$PATH
-
-# ECLIPSE TOPCASED
-TOPCASED_HOME=$LOCAL_DIR/eclipse/topcased
-[ -d "$TOPCASED_HOME" ] && PATH=$TOPCASED_HOME:$PATH
-
-# ANOD
-SANDBOX_ROOT=$PUCCI_HOME/gcc-47
-[ -d "$SANDBOX_ROOT=" ] && PATH=$SANDBOX_ROOT=/bin:$PATH
-
-###############
-## GMC TOOLS ##
-###############
-
-PTOOLSET_DIR=$PUCCI_HOME/ptoolset
-GMS_DIR=$PTOOLSET_DIR/gms
-
-# GMC
-
-[ -d "$GMS_DIR" ] && PATH=$GMS_DIR/qualified/obj:$PATH
-
-# GMV
-
-GMV_HOME=$GMS_DIR/gmv
-[ -d "$GMV_HOME" ] && PATH=$GMV_HOME/obj:$PATH
-
-# GMS_SIM
-
-GMS_SIM_HOME=$GMS_DIR/tests/qualifiable/himoco_sim
-[ -d "$GMS_SIM_HOME" ] && PATH=$GMS_SIM_HOME/obj:$PATH
-
-# MDL2JSON
-
-MDL2JSON_HOME=$GMS_DIR/gui
-[ -d "$MDL2JSON_HOME" ] && PATH=$MDL2JSON_HOME/obj:$PATH
-
-export PATH
-
-##########################
-## GCC-47 SANDBOX TOOLS ##
-##########################
-
-# CODEPEER
-
-CPATH="$CPATH:/usr/include/x86_64-linux-gnu"
-PATH="/chelles.b/users/pucci/gcc-47/x86_64-linux/codepeer/install/bin:$PATH"
-LD_LIBRARY_PATH="/chelles.b/users/pucci/gcc-47/x86_64-linux/codepeer/install/lib64:/chelles.b/users/pucci/gcc-47/x86_64-linux/codepeer/install/lib:$LD_LIBRARY_PATH"
-GPR_PROJECT_PATH='/chelles.b/users/pucci/gcc-47/x86_64-linux/codepeer/install/share/gpr:/chelles.b/users/pucci/gcc-47/x86_64-linux/codepeer/install/lib/gnat'
-LIBRARY_PATH="$LIBRARY_PATH:/usr/lib/x86_64-linux-gnu"
-export CPATH PATH LD_LIBRARY_PATH GPR_PROJECT_PATH LIBRARY_PATH
-
-# GPS
-
-CPATH="$CPATH:/usr/include/x86_64-linux-gnu"
-PATH="/chelles.b/users/pucci/gcc-47/x86_64-linux/gps/install/bin:$PATH"
-LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/chelles.b/users/pucci/gcc-47/x86_64-linux/gps/install/lib64:/chelles.b/users/pucci/gcc-47/x86_64-linux/gps/install/lib"
-LIBRARY_PATH="$LIBRARY_PATH:/usr/lib/x86_64-linux-gnu"
-export CPATH PATH LD_LIBRARY_PATH LIBRARY_PATH
-
-# STABLE-GNAT
-
-CPATH="$CPATH:/usr/include/x86_64-linux-gnu"
-PATH="/chelles.b/users/pucci/gcc-47/x86_64-linux/stable-gnat/install/bin:$PATH"
-LD_LIBRARY_PATH="/chelles.b/users/pucci/gcc-47/x86_64-linux/stable-gnat/install/lib64:/chelles.b/users/pucci/gcc-47/x86_64-linux/stable-gnat/install/lib:$LD_LIBRARY_PATH"
-GPR_PROJECT_PATH='/chelles.b/users/pucci/gcc-47/x86_64-linux/stable-gnat/install/share/gpr:/chelles.b/users/pucci/gcc-47/x86_64-linux/stable-gnat/install/lib/gnat'
-LIBRARY_PATH="$LIBRARY_PATH:/usr/lib/x86_64-linux-gnu"
-export CPATH PATH LD_LIBRARY_PATH GPR_PROJECT_PATH LIBRARY_PATH
-
-#########
-## EOF ##
-#########
-
-export CLICOLOR=true
-export SVN_EDITOR=vi
-export GIT_EDITOR=vi
-export EDITOR=vi
-export PROCESSORS=16
-
-# Bugtool Remote
-alias bugtool=/homes/pucci/Bugtool-remote/btr
-
-# Goto Ptoolset dir
-[ -d "$GMS_DIR" ] && cd $GMS_DIR
+f [ -f $LOCALBASHRC ]; then
+    . $LOCALBASHRC
+fi
