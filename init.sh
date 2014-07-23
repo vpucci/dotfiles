@@ -39,9 +39,9 @@ for file in $files; do
 done
 
 # install vim plugins
-if [ -x /usr/bin/vim ]; then
+if type -p vim >/dev/null 2>&1; then
     echo "Installing vim plugins"
-    eval "$(vim +PluginInstall +qall)"
+    vim +PluginInstall +qall
 else
     echo "Vim is missing in /usr/bin/"
 fi
