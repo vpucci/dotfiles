@@ -83,7 +83,7 @@ export PYTHON_OK
 ##################
 # Now, run the host-specific bashrc if any
 # the host-specific bashrc file
-LOCALBASHRC="~/dotfiles/bash/bashrc_`hostname | cut -d. -f1`"
+LOCALBASHRC=$HOME'/dotfiles/bash/bashrc_'`hostname | cut -d. -f1`
 
 f [ -f $LOCALBASHRC ]; then
     . $LOCALBASHRC

@@ -12,6 +12,6 @@ Installation
 ``` bash
 git clone https://vpucci:[password]@github.com/vpucci/dotfiles.git
 cd ~/dotfiles
-./makesymlinks.sh
+./init.sh
 ```
 where `[password]` must be replaced by vpucci's GitHub password.

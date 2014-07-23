@@ -1,6 +1,8 @@
 #!/bin/bash
-# symlinks.sh
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles.
+# init.sh
+# This script initializes dotfiles:
+# - create symlinks from the home directory to any desired dotfiles in ~/dotfiles.
+# - install all the vim plugins declared in ~/dotfiles/vimrc.
 
 ###############
 ## Variables ##
@@ -26,10 +28,20 @@ echo -n "Changing to the $dir directory ..."
 cd $dir
 echo "done"
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
+# move any existing dotfiles in homedir to dotfiles_old directory, then create
+# symlinks from the homedir to any files in the ~/dotfiles directory specified
+# in $files
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
     mv ~/.$file ~/dotfiles_old/
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+# install vim plugins
+if [ -x /usr/bin/vim ]; then
+    echo "Installing vim plugins"
+    eval "$(vim +PluginInstall +qall)"
+else
+    echo "Vim is missing in /usr/bin/"
+fi
