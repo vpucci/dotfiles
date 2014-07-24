@@ -7,12 +7,13 @@
 #==============
 # Set Variables 
 #==============
+# list of files/folders to symlink in homedir (to complete)
+files="profile bashrc vimrc tmux.conf"
+
 # dotfiles directory
 dir=~/dotfiles
  # old dotfiles backup directory
 olddir=~/dotfiles_old
-# list of files/folders to symlink in homedir (to complete)
-files="bashrc vimrc tmux.conf"
 # package manager
 if [ "$(uname)" == "Darwin" ]; then
    packman=brew
