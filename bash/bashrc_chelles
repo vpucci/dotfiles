@@ -27,13 +27,17 @@ ANT_HOME=$LOCAL_DIR/apache-ant
 MATLAB_HOME=/usr/local/MATLAB/R2012b
 [ -d "$MATLAB_HOME" ] && PATH=$MATLAB_HOME/bin:$PATH
 
-# ECLIPSE JUNO
-# JUNO_HOME=$LOCAL_DIR/eclipse/juno
-# [ -d "$JUNO_HOME" ] && PATH=$JUNO_HOME:$PATH
+# ECLIPSE
+ECLIPSE_HOME=$LOCAL_DIR/eclipse
+if [ -d "$ECLIPSE_HOME" ]; then
+    alias eclipse="$ECLIPSE_HOME/eclipse"
+fi
 
-# ECLIPSE TOPCASED
-TOPCASED_HOME=$LOCAL_DIR/eclipse/topcased
-[ -d "$TOPCASED_HOME" ] && PATH=$TOPCASED_HOME:$PATH
+# TOPCASED
+TOPCASED_HOME=$LOCAL_DIR/Topcased-5.3.1
+if [ -d "$TOPCASED_HOME" ]; then
+    alias topcased="$TOPCASED_HOME/eclipse"
+fi
 
 # ANOD
 SANDBOX_ROOT=$PUCCI_HOME/gcc-47
