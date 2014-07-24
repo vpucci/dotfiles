@@ -10,8 +10,7 @@ This repository uses Bash as the primary shell.
 Installation
 ------------
 ``` bash
-git clone https://vpucci:[password]@github.com/vpucci/dotfiles.git
+git clone https://vpucci@github.com/vpucci/dotfiles.git
 cd ~/dotfiles
 ./init.sh
 ```
-where `[password]` must be replaced by vpucci's GitHub password.
