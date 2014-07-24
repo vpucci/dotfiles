@@ -1,0 +1,27 @@
+[user]
+        name = Vincent Pucci
+        email = pucci@adacore.com
+[url "ssh://pucci@review.eu.adacore.com:29418/"]
+        insteadof = review:
+[alias]
+        st = status
+        co = checkout
+        ci = commit
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit
+        sb = show-branch
+        topush = !git show-branch `git rev-parse --abbrev-ref --symbolic-full-name @{u}` HEAD
+[core]
+        pager = less -RX
+        autocrlf = input
+[color]
+        ui = true
+[merge]
+        tool = vimdiff
+[sendemail]
+        confirm = always
+[difftool "diff"]
+        cmd = diff
+[push]
+        default = tracking
+[pull]
+        rebase = true

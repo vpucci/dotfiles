@@ -8,7 +8,7 @@
 # Set Variables 
 #==============
 # list of files/folders to symlink in homedir (to complete)
-files="profile bashrc vimrc tmux.conf"
+files="profile bashrc vimrc gitconfig tmux.conf"
 
 # dotfiles directory
 dir=~/dotfiles
