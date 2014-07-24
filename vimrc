@@ -25,9 +25,15 @@ function! UseVundle()
 
     " Powerline for Vim
     set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+    set guifont=Sauce\ Code\ Powerline
+    let g:Powerline_symbols='fancy'
     set encoding=utf-8
+    set term=xterm-256color
+    set t_Co=256
+    set termencoding=utf-8
     set laststatus=2
     set ambiwidth=single
+    set fillchars+=stl:\ ,stlnc:\
 endfunction
 
 if validpython == '1'
@@ -50,6 +56,3 @@ augroup END " }
 
 " limit the number of characters of commit msg to 76
 au FileType gitcommit set tw=76
-
-" Enable bash-support plugin
-filetype plugin on
