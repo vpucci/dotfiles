@@ -12,7 +12,15 @@ dir=~/dotfiles
  # old dotfiles backup directory
 olddir=~/dotfiles_old
 # list of files/folders to symlink in homedir (to complete)
-files="bashrc vimrc vim tmux.conf"
+files="bashrc vimrc tmux.conf"
+# package manager
+if [ "$(uname)" == "Darwin" ]; then
+   packman=brew
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+   packman=apt-get
+elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+   echo "no package manager for Windows hosts"
+fi
 
 
 #===========
@@ -38,10 +46,21 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+# install vim
+if ! type -p vim >/dev/null 2>&1; then
+    echo "Installing vim"
+    $packman install vim
+fi
+
 # install vim plugins
-if type -p vim >/dev/null 2>&1; then
+if [ ! -f ~/.vim/bundle/Vundle.vim ]; then
     echo "Installing vim plugins"
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
-else
-    echo "Vim is missing in /usr/bin/"
+fi
+
+# install tmux
+if ! type -p tmux >/dev/null 2>&1; then
+    echo "Installing tmux"
+    $packman install tmux
 fi
