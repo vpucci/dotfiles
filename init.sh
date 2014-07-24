@@ -53,7 +53,7 @@ if ! type -p vim >/dev/null 2>&1; then
 fi
 
 # install vim plugins
-if [ ! -f ~/.vim/bundle/Vundle.vim ]; then
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
     echo "Installing vim plugins"
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
