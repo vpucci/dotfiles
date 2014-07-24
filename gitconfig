@@ -13,8 +13,6 @@
 [core]
         pager = less -RX
         autocrlf = input
-[color]
-        ui = true
 [merge]
         tool = vimdiff
 [sendemail]
