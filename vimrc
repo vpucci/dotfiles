@@ -25,7 +25,6 @@ function! UseVundle()
 
     " Powerline for Vim
     set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-    set guifont=Sauce\ Code\ Powerline
     let g:Powerline_symbols='fancy'
     set encoding=utf-8
     set term=xterm-256color
