@@ -14,7 +14,6 @@ export POWERLINE_CONFIG_COMMAND=$HOME/.vim/bundle/powerline/scripts/powerline-co
 # EOF
 #====
 
-export CLICOLOR=true
 export SVN_EDITOR=vi
 export EDITOR=vi
 export PROCESSORS=8
