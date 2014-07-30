@@ -2,9 +2,9 @@
 # specific configurations for host pucci-laptop (AdaCore PC)
 
 
-###################
-## LOCAL INSTALL ##
-###################
+#==============
+# LOCAL INSTALL
+#==============
 
 # ADACORE DIR
 ADACORE_HOME=/home/pucci/adacore
@@ -33,13 +33,9 @@ GPS_HOME=$PRODUCT_DIR/gps
 QM_HOME=$ADACORE_INSTALL/qmachine
 [ -d "$QM_HOME" ] && PATH=$QM_HOME/bin:$PATH
 
-# VIM
-VIMRUNTIME=$HOME/.vim
-
 # Project P appropriate headers and libraries
 export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu:${C_INCLUDE_PATH}
 export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:${LIBRARY_PATH}
-export PROCESSORS=8
 
 # GMC
 [ -d "$GMS_HOME" ] && PATH=$GMS_HOME/qualified/obj:$PATH
@@ -48,11 +44,16 @@ export PROCESSORS=8
 MDL2JSON_HOME=$GMS_HOME/gui
 [ -d "$MDL2JSON_HOME" ] && PATH=$MDL2JSON_HOME/obj:$PATH
 
-# SVN Editor
-export SVN_EDITOR=vim
 
-# Git Editor
-export GIT_EDITOR=vim
+#====
+# EOF
+#====
+
+export CLICOLOR=true
+export SVN_EDITOR=vi
+export GIT_EDITOR=vi
+export EDITOR=vi
+export PROCESSORS=8
 
 # Bugtool Remote
 alias bugtool=$ADACORE_INSTALL/bugtool-remote/btr

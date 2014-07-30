@@ -65,7 +65,7 @@ PATH=~/bin:${PATH}
 # Make sure python is 2.6 or later
 PYTHON_OK=`python -c 'import sys; print (sys.version_info >= (2, 6) and "1" or "0")'`
 
-if [ "$PYTHON_OK" = '1' ]; then
+if [ "$PYTHON_OK" = '1' ] && [ -f $HOME/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh ]; then
     # Run Powerline if Python 2.6+
     source $HOME/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh
     # use default_leftonly Powerline theme for branch segment to be seen

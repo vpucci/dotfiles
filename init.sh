@@ -8,7 +8,7 @@
 # Set Variables 
 #==============
 # list of files/folders to symlink in homedir (to complete)
-files="profile bashrc vimrc gitconfig tmux.conf"
+files="profile bashrc vimrc gitconfig git-prompt.sh tmux.conf"
 
 # dotfiles directory
 dir=~/dotfiles
@@ -53,15 +53,15 @@ if ! type -p vim >/dev/null 2>&1; then
     $packman install vim
 fi
 
+# install tmux
+if ! type -p tmux >/dev/null 2>&1; then
+    echo "Installing tmux"
+    $packman install tmux
+fi
+
 # install vim plugins
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
     echo "Installing vim plugins"
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
-fi
-
-# install tmux
-if ! type -p tmux >/dev/null 2>&1; then
-    echo "Installing tmux"
-    $packman install tmux
 fi
