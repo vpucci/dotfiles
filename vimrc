@@ -20,6 +20,7 @@ function! UseVundle()
     Plugin 'christoomey/vim-tmux-navigator'
     Plugin 'lokaltog/powerline'
     Plugin 'tell-k/vim-autopep8'
+    Plugin 'ervandew/supertab'
 
     call vundle#end()
 
@@ -52,6 +53,8 @@ augroup END " }
 :set background=dark
 :syntax enable
 :set backspace=2
+" let vim gets control of the mouse
+:set mouse=a
 
 " limit the number of characters of commit msg to 76
 au FileType gitcommit set tw=76
