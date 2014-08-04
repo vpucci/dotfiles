@@ -41,7 +41,7 @@ fi
 
 # ANOD
 SANDBOX_ROOT=$PUCCI_HOME/gcc-47
-[ -d "$SANDBOX_ROOT=" ] && PATH=$SANDBOX_ROOT=/bin:$PATH
+[ -d "$SANDBOX_ROOT" ] && PATH=$SANDBOX_ROOT/bin:$PATH
 
 
 #==========
@@ -53,7 +53,7 @@ GMS_DIR=$PTOOLSET_DIR/gms
 
 # GMC
 
-[ -d "$GMS_DIR" ] && PATH=$GMS_DIR/qualified/obj:$PATH
+[ -d "$GMS_DIR" ] && PATH=$GMS_DIR/install/bin:$PATH
 
 # GMV
 

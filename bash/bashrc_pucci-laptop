@@ -38,11 +38,13 @@ export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu:${C_INCLUDE_PATH}
 export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:${LIBRARY_PATH}
 
 # GMC
-[ -d "$GMS_HOME" ] && PATH=$GMS_HOME/qualified/obj:$PATH
+[ -d "$GMS_HOME" ] && PATH=$GMS_HOME/install/bin:$PATH
 
 # MDL2JSON
 MDL2JSON_HOME=$GMS_HOME/gui
 [ -d "$MDL2JSON_HOME" ] && PATH=$MDL2JSON_HOME/obj:$PATH
+
+export PATH
 
 
 #====
