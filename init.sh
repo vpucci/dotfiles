@@ -8,12 +8,12 @@
 # Set Variables 
 #==============
 # list of files/folders to symlink in homedir (to complete)
-files="profile bashrc vimrc gitconfig git-prompt.sh tmux.conf"
+files="profile bashrc vim vimrc gitconfig git-prompt.sh tmux.conf"
 
 # dotfiles directory
-dir=~/dotfiles
+dir=$HOME/dotfiles
  # old dotfiles backup directory
-olddir=~/dotfiles_old
+olddir=$HOME/dotfiles_old
 # package manager
 if [ "$(uname)" == "Darwin" ]; then
    packman=brew
@@ -22,7 +22,6 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
    echo "no package manager for Windows hosts"
 fi
-
 
 #===========
 # Start init
@@ -60,8 +59,7 @@ if ! type -p tmux >/dev/null 2>&1; then
 fi
 
 # install vim plugins
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+if [ ! -d $HOME/.vim/bundle/Vundle.vim ]; then
     echo "Installing vim plugins"
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
 fi

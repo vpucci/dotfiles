@@ -70,6 +70,7 @@ if [ "$PYTHON_OK" = '1' ] && [ -f $HOME/.vim/bundle/powerline/powerline/bindings
     source $HOME/.vim/bundle/powerline/powerline/bindings/bash/powerline.sh
     # use default_leftonly Powerline theme for branch segment to be seen
     POWERLINE_COMMAND="$POWERLINE_COMMAND -c ext.shell.theme=default_leftonly"
+    POWERLINE_CONFIG_COMMAND=$HOME/.vim/bundle/powerline/scripts/powerline-config
 else
     # Load in the git branch prompt script.
     source $HOME/.git-prompt.sh

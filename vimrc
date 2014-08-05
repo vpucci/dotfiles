@@ -16,16 +16,19 @@ function! UseVundle()
     " To install all plugins:
     " " From Vim, run :PluginInstall
     " " From command line, run vim +PluginInstall +qall
+
+    " Let's Vundle manage Vundle
     Plugin 'gmarik/Vundle.vim'
+
+    " My Vundles
     Plugin 'christoomey/vim-tmux-navigator'
-    Plugin 'lokaltog/powerline'
+    Bundle 'lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
     Plugin 'tell-k/vim-autopep8'
     Plugin 'ervandew/supertab'
 
     call vundle#end()
 
     " Powerline for Vim
-    set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
     let g:Powerline_symbols='fancy'
     set encoding=utf-8
     set term=xterm-256color
