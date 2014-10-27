@@ -17,3 +17,15 @@ export POWERLINE_CONFIG_COMMAND=$HOME/.vim/bundle/powerline/scripts/powerline-co
 export SVN_EDITOR=vi
 export EDITOR=vi
 export PROCESSORS=8
+
+PATH="/Users/pucci/adacore/gcc-49/x86_64-darwin/gps/install/bin:$PATH"
+DYLD_LIBRARY_PATH="/Users/pucci/adacore/gcc-49/x86_64-darwin/gps/install/lib"
+export PATH DYLD_LIBRARY_PATH
+PATH="/Users/pucci/adacore/gcc-49/x86_64-darwin/codepeer/install/bin:$PATH"
+DYLD_LIBRARY_PATH="/Users/pucci/adacore/gcc-49/x86_64-darwin/codepeer/install/lib"
+GPR_PROJECT_PATH="/Users/pucci/adacore/gcc-49/x86_64-darwin/codepeer/install/share/gpr:/Users/pucci/adacore/gcc-49/x86_64-darwin/codepeer/install/lib/gnat"
+export PATH DYLD_LIBRARY_PATH GPR_PROJECT_PATH
+PATH="/Users/pucci/adacore/gcc-47/x86_64-darwin/stable-gnat/install/bin:$PATH"
+DYLD_LIBRARY_PATH="/Users/pucci/adacore/gcc-47/x86_64-darwin/stable-gnat/install/lib"
+GPR_PROJECT_PATH="/Users/pucci/adacore/gcc-47/x86_64-darwin/stable-gnat/install/share/gpr:/Users/pucci/adacore/gcc-47/x86_64-darwin/stable-gnat/install/lib/gnat"
+export PATH DYLD_LIBRARY_PATH GPR_PROJECT_PATH
