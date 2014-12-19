@@ -8,44 +8,99 @@
 
 # ADACORE DIR
 ADACORE_HOME=/home/pucci/adacore
-PTOOLSET_HOME=$ADACORE_HOME/ptoolset
-GMS_HOME=$PTOOLSET_HOME/gms
-ADACORE_INSTALL=$ADACORE_HOME/install
-GCC_47_DIR=$ADACORE_HOME/gcc-47
-PRODUCT_DIR=$GCC_47_DIR/x86_64-linux
+GCC_49_DIR=$ADACORE_HOME/gcc-49
 
 # GNAT PRO, GPS & CODEPEER
-GNAT_HOME=$ADACORE_INSTALL/gnat
-[ -d "$GNAT_HOME" ] && PATH=$GNAT_HOME/bin:$PATH
+#GNAT_HOME=$ADACORE_INSTALL/gnat
+#[ -d "$GNAT_HOME" ] && PATH=$GNAT_HOME/bin:$PATH
 #GNAT_HOME=$PRODUCT_DIR/gnat
 #[ -d "$GNAT_HOME" ] && PATH=$GNAT_HOME/install/bin:$PATH
-GPS_HOME=$PRODUCT_DIR/gps
-[ -d "$GPS_HOME" ] && PATH=$GPS_HOME/install/bin:$PATH
+#GPS_HOME=$PRODUCT_DIR/gps
+#[ -d "$GPS_HOME" ] && PATH=$GPS_HOME/install/bin:$PATH
 
 # GNATPYTHON
 #GNATPYTHON_DIR=$ADACORE_INSTALL/gnatpython
 #[ -d "$GNATPYTHON_DIR" ] && PATH=$GNATPYTHON_DIR/bin:$PATH
 
 # ANOD
-[ -d "$GCC_47_DIR" ] && PATH=$GCC_47_DIR/bin:$PATH
+[ -d "$GCC_49_DIR" ] && PATH=$GCC_49_DIR/bin:$PATH
 
 # QM
-QM_HOME=$ADACORE_INSTALL/qmachine
-[ -d "$QM_HOME" ] && PATH=$QM_HOME/bin:$PATH
+#QM_HOME=$ADACORE_INSTALL/qmachine
+#[ -d "$QM_HOME" ] && PATH=$QM_HOME/bin:$PATH
 
 # Project P appropriate headers and libraries
 export C_INCLUDE_PATH=/usr/include/x86_64-linux-gnu:${C_INCLUDE_PATH}
 export LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:${LIBRARY_PATH}
 
 # GMC
-[ -d "$GMS_HOME" ] && PATH=$GMS_HOME/install/bin:$PATH
+#[ -d "$GMS_HOME" ] && PATH=$GMS_HOME/qualified/obj:$PATH
 
 # MDL2JSON
-MDL2JSON_HOME=$GMS_HOME/gui
-[ -d "$MDL2JSON_HOME" ] && PATH=$MDL2JSON_HOME/obj:$PATH
+#MDL2JSON_HOME=$GMS_HOME/gui
+#[ -d "$MDL2JSON_HOME" ] && PATH=$MDL2JSON_HOME/obj:$PATH
 
 export PATH
 
+#=====
+# QGEN
+#=====
+
+PTOOLSET_DIR=$ADACORE_HOME/ptoolset
+QGEN_DIR=$PTOOLSET_DIR/gms
+
+# QGENC
+
+[ -d "$QGEN_DIR" ] && PATH=$QGEN_DIR/qualified/obj/dev:$PATH
+
+# QGENV
+
+QGENV_HOME=$QGEN_DIR/qgenv
+[ -d "$QGENV_HOME" ] && PATH=$QGENV_HOME/obj/dev:$PATH
+
+# QGENC_SIM
+
+QGENC_SIM_HOME=$QGEN_DIR/tests/qualifiable/himoco_sim
+[ -d "$QGENC_SIM_HOME" ] && PATH=$QGENC_SIM_HOME/obj/dev:$PATH
+
+# MDL2JSON
+
+MDL2JSON_HOME=$QGEN_DIR/gui
+[ -d "$MDL2JSON_HOME" ] && PATH=$MDL2JSON_HOME/obj/dev:$PATH
+
+export PATH
+
+
+#=====================
+# GCC-49 SANDBOX TOOLS
+#=====================
+
+# PYTHON
+PATH="/home/pucci/adacore/gcc-49/x86_64-linux/python-2.7.8/install/bin:$PATH"
+export PATH
+
+# GPS
+CPATH="/usr/include/x86_64-linux-gnu"
+PATH="/home/pucci/adacore/gcc-49/x86_64-linux/gps/install/bin:$PATH"
+LD_LIBRARY_PATH="/home/pucci/adacore/gcc-49/x86_64-linux/gps/install/lib64:/home/pucci/adacore/gcc-49/x86_64-linux/gps/install/lib:$LD_LIBRARY_PATH"
+LIBRARY_PATH="$LIBRARY_PATH/usr/lib/x86_64-linux-gnu:"
+export CPATH PATH LD_LIBRARY_PATH LIBRARY_PATH
+
+# CODEPEER
+CPATH="/usr/include/x86_64-linux-gnu"
+PATH="/home/pucci/adacore/gcc-49/x86_64-linux/codepeer/install/bin:$PATH"
+GPR_PROJECT_PATH="/home/pucci/adacore/gcc-49/x86_64-linux/codepeer/install/share/gpr:$GPR_PROJECT_PATH"
+LD_LIBRARY_PATH="/home/pucci/adacore/gcc-49/x86_64-linux/codepeer/install/lib64:/home/pucci/adacore/gcc-49/x86_64-linux/codepeer/install/lib:$LD_LIBRARY_PATH"
+LIBRARY_PATH="$LIBRARY_PATH/usr/lib/x86_64-linux-gnu:"
+export CPATH PATH GPR_PROJECT_PATH LD_LIBRARY_PATH LIBRARY_PATH
+
+# STABLE-GNAT
+CPATH="/usr/include/x86_64-linux-gnu"
+PATH="/home/pucci/adacore/gcc-49/x86_64-linux/stable-gnat/install/bin:$PATH"
+GPR_PROJECT_PATH="/home/pucci/adacore/gcc-49/x86_64-linux/stable-gnat/install/share/gpr:/home/pucci/adacore/gcc-49/x86_64-linux/stable-gnat/install/lib/gnat:$GPR_PROJECT_PATH"
+LD_LIBRARY_PATH="/home/pucci/adacore/gcc-49/x86_64-linux/stable-gnat/install/lib64:/home/pucci/adacore/gcc-49/x86_64-linux/stable-gnat/install/lib:$LD_LIBRARY_PATH"
+LIBRARY_PATH="$LIBRARY_PATH/usr/lib/x86_64-linux-gnu:"
+export CPATH PATH GPR_PROJECT_PATH LD_LIBRARY_PATH LIBRARY_PATH
 
 #====
 # EOF
